@@ -13,8 +13,6 @@ class AppointmentsController < ApplicationController
         @pending_appointments << appointment
       when "Declined"
         @declined_appointments << appointment
-      else
-        @test = "wer"
       end
     end
   end
