@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'treatments/index', to: "treatments#index"
+  root to: "treatments#index"
+  resources :treatments, only: %i[show]
+  resources :reviews, only: [:new, :create] # new is temporary
   devise_for :users
-  root to: "pages#home"
-  resources :reviews, only: [:new, :create]
 end
