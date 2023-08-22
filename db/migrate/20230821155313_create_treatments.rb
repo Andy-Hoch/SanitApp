@@ -5,7 +5,6 @@ class CreateTreatments < ActiveRecord::Migration[7.0]
       t.string :category
       t.text :description
       t.text :address
-      t.string :image_url
       t.float :price
       t.timestamp :next_free_spot_timestamp
       t.integer :duration
