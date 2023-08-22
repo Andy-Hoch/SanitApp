@@ -8,12 +8,12 @@
           <%= f.error_notification %>
 
           <div class="form-inputs">
-            <%= f.input :first_name, placeholder: 'Fist Name' %>
+            <%= f.input :first_name, placeholder: 'First Name' %>
             <%= f.input :last_name, placeholder: 'Last Name' %>
             <%= f.input :address, placeholder: 'Address' %>
             <%= f.input :birth_date, placeholder: 'Day/Month/Year' %>
             <%= f.input :phone_number, placeholder: '+49********' %>
-            <%= f.input :email, required: true, autofocus: true %>
+            <%= f.input :email, required: true, autofocus: true, placeholder: 'youremail@gmail.com' %>
 
             <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
               <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
@@ -21,14 +21,17 @@
             <%= f.input :password,
                         hint: "leave it blank if you don't want to change it",
                         required: false,
-                        input_html: { autocomplete: "new-password" } %>
+                        input_html: { autocomplete: "new-password" },
+                        placeholder: '***************' %>
             <%= f.input :password_confirmation,
                         required: false,
-                        input_html: { autocomplete: "new-password" } %>
+                        input_html: { autocomplete: "new-password" },
+                        placeholder: '***************'%>
             <%= f.input :current_password,
                         hint: "we need your current password to confirm your changes",
                         required: true,
-                        input_html: { autocomplete: "current-password" } %>
+                        input_html: { autocomplete: "current-password" },
+                        placeholder: '***************' %>
           </div>
 
           <div class="form-actions">
