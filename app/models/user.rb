@@ -6,4 +6,6 @@ class User < ApplicationRecord
   has_many :appointments
   has_many :treatments
   has_many :reviews
+  validates :first_name, presence: true
+  validates :last_name, presence: true
 end

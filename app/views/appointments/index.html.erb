@@ -1,1 +1,11 @@
-<h1>Test</h1>
+<div class="container">
+  <h1>Your Appointments</h1>
+  <ul>
+    <% @appointments.each do |app| %>
+      <li>
+        User: <%= app.user.first_name %> <%= app.user.last_name %> - <%= app.comment %> - <%= app.status %>
+        Provider: <%= app.treatment.user.first_name %> <%= app.treatment.user.last_name %> - <%= app.treatment.name %> - <%= app.status %>
+      </li>
+    <% end %>
+  </ul>
+</div>
