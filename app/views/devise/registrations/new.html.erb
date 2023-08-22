@@ -1,40 +1,40 @@
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
-
 <div class="container py-5">
   <div class="row">
     <div class="col-12 col-md-6 offset-lg-3">
       <div class="bg-white rounded p-3 shadow">
-      <h2>Become a Part of SanitApp</h2>
-        <div class="form-inputs">
-            <%= f.input :first_name, placeholder: 'Fist Name' %>
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= f.error_notification %>
+
+          <div class="form-inputs">
+            <h2>Become a Part of SanitApp</h2>
+            <%= f.input :first_name, placeholder: 'First Name' %>
             <%= f.input :last_name, placeholder: 'Last Name' %>
             <%= f.input :address, placeholder: 'Address' %>
             <%= f.input :birth_date, placeholder: 'Day/Month/Year' %>
+            <%= f.input :phone_number, placeholder: '+49********' %>
             <%= f.input :email,
                         required: true,
                         autofocus: true,
                         input_html: { autocomplete: "email" },
-                        placeholder: 'youremial@gmail.com' %>
+                        placeholder: 'youremail@gmail.com'%>
             <%= f.input :password,
                         required: true,
                         hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                         input_html: { autocomplete: "new-password" },
-                        placeholder: '****************' %>
+                        placeholder: '***************' %>
             <%= f.input :password_confirmation,
                         required: true,
                         input_html: { autocomplete: "new-password" },
-                        placeholder: '****************' %>
-        </div>
+                        placeholder: '***************' %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, "Sign up" %>
+          </div>
+        <% end %>
+
+        <%= render "devise/shared/links" %>
       </div>
     </div>
   </div>
 </div>
-
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
