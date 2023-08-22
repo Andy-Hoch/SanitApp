@@ -7,7 +7,7 @@ class CreateTreatments < ActiveRecord::Migration[7.0]
       t.text :address
       t.string :image_url
       t.float :price
-      t.next_free_spot_timestamp :timestamp
+      t.timestamp :next_free_spot_timestamp
       t.integer :duration
       t.references :user, null: false, foreign_key: true
 
