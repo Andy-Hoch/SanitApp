@@ -1,0 +1,7 @@
+ <h3>Add a review of your treatment</h3>
+
+  <%= simple_form_for @review do |f| %>
+      <%= f.input :rating, placeholder: 'Between 1 to 5 stars' %>
+      <%= f.input :comment, placeholder: 'Add your comments here'  %>
+      <%= f.submit class: 'btn btn-flat' %>
+  <% end %>
