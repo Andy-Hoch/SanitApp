@@ -1,4 +1,5 @@
 class TreatmentsController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[index show]
   def index
     @treatments = Treatment.all
   end
@@ -12,7 +13,8 @@ class TreatmentsController < ApplicationController
 
   def create
     @treatment = Treatment.new(treatment_params)
-    if @treatment.save
+    @treatment.user = current_user
+    if @treatment.save!
       redirect_to treatment_path(@treatment)
     else
       render :new, status: :unprocessable_entity
