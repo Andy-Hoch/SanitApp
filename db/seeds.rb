@@ -17,8 +17,8 @@ andreas = User.new(
 )
 file = URI.open("https://media.licdn.com/dms/image/C4D03AQG0MGuYWqBpKA/profile-displayphoto-shrink_400_400/0/1611306545766?e=1698278400&v=beta&t=VTRkWs2DHdW-7ATAU8VcqnVeZ57nB0LtaXsUcmAnY3A")
 andreas.photo.attach(io: file, filename: "andreas.png", content_type: "image/png")
-andreas.save
-puts andreas
+andreas.save!
+puts andreas.first_name
 
 nicole = User.new(
   first_name: 'Nicole',
@@ -32,8 +32,8 @@ nicole = User.new(
 )
 file = URI.open("https://media.licdn.com/dms/image/D4E03AQH4yorsJofpTA/profile-displayphoto-shrink_400_400/0/1687275644277?e=1698278400&v=beta&t=6VTVjJuaD2V6xF9Izd4cIIUGOAmlSw9WTW1-Q8QZ-YA")
 nicole.photo.attach(io: file, filename: "nicole.png", content_type: "image/png")
-nicole.save
-puts nicole
+nicole.save!
+puts nicole.first_name
 
 isabel = User.new(
   first_name: 'Isabel',
@@ -47,8 +47,8 @@ isabel = User.new(
 )
 file = URI.open("https://img.freepik.com/fotos-kostenlos/attraktive-selbstbewusste-reife-blonde-frau-die-gelbes-kleid-traegt-das-arme-auf-brust-kreuzt-und-gluecklich-in-die-kamera-laechelt-und-in-ihrer-neu-renovierten-wohnung-mit-sofa-und-fenstern-im-hintergrund-aufwirft_343059-2235.jpg?size=626&ext=jpg&uid=R111922769&ga=GA1.2.1135167755.1691244678&semt=ais")
 isabel.photo.attach(io: file, filename: "isabel.png", content_type: "image/png")
-isabel.save
-puts isabel
+isabel.save!
+puts isabel.first_name
 
 heiko = User.new(
   first_name: 'Heiko',
@@ -57,13 +57,13 @@ heiko = User.new(
   birth_date: Date.parse('05-02-1984'),
   phone_number: '+49 170 123456',
   email: 'heiko@mueller.de',
-  password: 'heiko',
-  password_confirmation: 'heiko'
+  password: 'heiko1',
+  password_confirmation: 'heiko1'
 )
 file = URI.open("https://img.freepik.com/fotos-kostenlos/das-portraet-eines-gutaussehenden-baertigen-europaeischen-mannes-mit-grauem-haar-und-bartlaecheln-sieht-angenehm-direkt-nach-vorne-aus-wenn-es-gut-gelaunt-ist-traegt-der-glueckliche-tag-eine-brille-und-einen-pullover-die-ueber-der-blauen-wand-isoliert-sind_273609-44285.jpg?size=626&ext=jpg&uid=R111922769&ga=GA1.2.1135167755.1691244678&semt=ais")
 heiko.photo.attach(io: file, filename: "heiko.png", content_type: "image/png")
-heiko.save
-puts heiko
+heiko.save!
+puts heiko.valid?
 
 puts "Cleaning up treatments database..."
 Treatment.destroy_all
