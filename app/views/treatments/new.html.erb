@@ -9,6 +9,7 @@
     <%= f.input :duration, placeholder: 'Duration in minutes' %>
     <%= f.input :price, placeholder: 'Price in €' , label: 'Price in €'%>
     <%= f.input :next_free_spot_timestamp, placeholder: 'Next available date' %>
+    <%= f.input :photo, as: :file %>
     <%= f.submit class: 'btn btn-primary' %>
 <% end %>
 </div>
