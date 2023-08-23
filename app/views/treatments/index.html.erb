@@ -1,7 +1,23 @@
-<h1>Treatments#index</h1>
-<p>Find me in app/views/treatments/index.html.erb</p>
-<ul>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_url('happy_face.jpg') %>);">
+  <div class="container">
+    <h1><strong>SanitApp</strong></h1>
+    <p>Find help when you need it.</p>
+    <p>Where you need it.</p>
+  </div>
+</div>
+<div class="container">
+
+<div class="row row-cols-1 row-cols-md-2 g-4">
   <% @treatments.each do |treatment| %>
-    <li><%= treatment.name %> <%= treatment.category %> <%= treatment.description %></li>
+  <div class="col">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><%= treatment.name %></h5>
+        <p class="card-text"><%= treatment.description %></p>
+        <p class="card-text"><%= treatment.price %></p>
+      </div>
+    </div>
+  </div>
   <% end %>
-</ul>
+</div>
