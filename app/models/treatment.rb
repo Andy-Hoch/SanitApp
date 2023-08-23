@@ -7,6 +7,7 @@ class Treatment < ApplicationRecord
                 "Sleeping Problems",
                 "Aches & Pains",
                 "Breathing Problems",
+                "Indigestions",
                 "Headaches",
                 "Mood swings",
                 "Skin Irritations",
