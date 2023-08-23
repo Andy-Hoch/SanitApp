@@ -4,6 +4,6 @@ Rails.application.routes.draw do
     resources :appointments, only: %i[new create]  # new is temporary
     resources :reviews, only: %i[new create]  # new is temporary
   end
-  resources :appointments, only: %i[index show edit]
+  resources :appointments, only: %i[index show edit update]
   devise_for :users
 end
