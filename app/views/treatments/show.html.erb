@@ -2,11 +2,11 @@
 <h1><%= @treatment.name %></h1>
 <%= cl_image_tag @treatment.photo.key, height: 400, width: 600, crop: :fill %>
 <p>Category: <%= @treatment.category %></p>
-<p><%= @treatment.description %></p>
-<p><%= @treatment.address %></p>
-<p><%= @treatment.price %>€ for <%= @treatment.duration %> Minutes</p>
-<p>Next Free Timeslot: <%= @treatment.next_free_spot_timestamp %></p>
-<%= link_to("< back to the Treatments", root_path, class: "btn btn-outline-dark") %>
-<%= link_to("Ask for an Appointment", new_treatment_appointment_path(@treatment), class: "btn btn-primary") %>
+<p>Description: <%= @treatment.description %></p>
+<p>Location: <%= @treatment.address %></p>
+<p>Price: <%= @treatment.price %> € for <%= @treatment.duration %> Minutes</p>
+<p>Next free timeslot: <%= @treatment.next_free_spot_timestamp %></p>
+<%= link_to("< Back to treatments", root_path, class: "btn btn-outline-dark") %>
+<%= link_to("Ask for appointment", new_treatment_appointment_path(@treatment), class: "btn btn-primary") %>
 
 </div>
