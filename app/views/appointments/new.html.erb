@@ -1,6 +1,3 @@
-<div class="controller">
-  <%= simple_form_for(@appointment) do |f| %>
-    <%= f.input :comment %>
-    <%= f.submit %>
-  <% end %>
+<div class="container">
+  <%= render "user_form", appointment: @appointment %>
 </div>
