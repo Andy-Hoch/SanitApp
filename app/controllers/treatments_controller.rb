@@ -12,7 +12,8 @@ class TreatmentsController < ApplicationController
 
   def create
     @treatment = Treatment.new(treatment_params)
-    if @treatment.save
+    @treatment.user = current_user
+    if @treatment.save!
       redirect_to treatment_path(@treatment)
     else
       render :new, status: :unprocessable_entity
