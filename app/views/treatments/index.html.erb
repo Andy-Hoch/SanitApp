@@ -12,7 +12,7 @@
       <%= link_to treatment_path(treatment) do %>
         <div class="col">
           <div class="card">
-            <%= cl_image_tag treatment.photo.key, height: 200, width: 300, crop: :fit %>
+            <%= cl_image_tag treatment.user.photo.key, height: 200, width: 300, crop: :fit %>
             <div class="card-body">
               <h5 class="card-title"><%= treatment.name %></h5>
               <p class="card-text"><%= treatment.description %></p>

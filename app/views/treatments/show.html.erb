@@ -1,6 +1,6 @@
 <div class="container">
 <h1><%= @treatment.name %></h1>
-<%= cl_image_tag @treatment.photo.key, height: 400, width: 600, crop: :fill %>
+<%= cl_image_tag @treatment.user.photo.key, height: 400, width: 600, crop: :fill %>
 <p>Category: <%= @treatment.category %></p>
 <p>Description: <%= @treatment.description %></p>
 <p>Location: <%= @treatment.address %></p>
