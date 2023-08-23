@@ -10,8 +10,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to treatment_path(@treatment)
     else
-      @treatment = Treatment.new
-      render 'treatments/show', status: :unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 

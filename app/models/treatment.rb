@@ -1,7 +1,8 @@
 class Treatment < ApplicationRecord
   belongs_to :user
   has_many :appointments
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
+  has_one_attached :photo
   CATEGORIES = ["Low Energy",
                 "Sleeping Problems",
                 "Aches & Pains",

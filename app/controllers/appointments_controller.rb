@@ -1,4 +1,6 @@
 class AppointmentsController < ApplicationController
+  before_action :set_appointment, only: %i[show edit update]
+
   def index
     @appointments = Appointment.where(user_id: current_user.id)
     @approved_appointments = []
@@ -15,6 +17,9 @@ class AppointmentsController < ApplicationController
         @declined_appointments << appointment
       end
     end
+  end
+
+  def show
   end
 
   def new
@@ -34,7 +39,17 @@ class AppointmentsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+  end
+
   private
+
+  def set_appointment
+    @appointment = Appointment.find(params[:id])
+  end
 
   def appointment_params
     params.require(:appointment).permit(:status, :comment, :user_id, :treatment_id, :timeslot)
