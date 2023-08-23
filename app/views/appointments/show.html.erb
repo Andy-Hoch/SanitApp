@@ -1,0 +1,6 @@
+<div class="container">
+  <h1>Your Appointment</h1>
+    Time: <%= @appointment.timeslot %>
+    User: <%= @appointment.user.first_name %> <%= @appointment.user.last_name %> - <%= @appointment.comment %> - <%= @appointment.status %>
+    Provider: <%= @appointment.treatment.user.first_name %> <%= @appointment.treatment.user.last_name %> - <%= @appointment.treatment.name %> - <%= @appointment.status %>
+</div>
