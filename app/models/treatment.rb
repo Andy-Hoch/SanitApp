@@ -10,7 +10,7 @@ class Treatment < ApplicationRecord
                 "Indigestions",
                 "Headaches",
                 "Mood swings",
-                "Skin Irritations",
+                "Skin irritation",
                 "Restlessness"]
   validates :category, inclusion: { in: CATEGORIES }
 end
