@@ -30,7 +30,7 @@ class AppointmentsController < ApplicationController
       redirect_to appointment_path(@appointment)
     else
       @appointment = Appointment.new
-      render 'appointment/show', status: :unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 end
