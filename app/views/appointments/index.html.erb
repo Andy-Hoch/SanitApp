@@ -3,6 +3,7 @@
   <ul>
     <% @appointments.each do |app| %>
       <li>
+        Time: <%= app.timeslot %>
         User: <%= app.user.first_name %> <%= app.user.last_name %> - <%= app.comment %> - <%= app.status %>
         Provider: <%= app.treatment.user.first_name %> <%= app.treatment.user.last_name %> - <%= app.treatment.name %> - <%= app.status %>
       </li>
