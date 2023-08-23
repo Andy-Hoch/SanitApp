@@ -33,4 +33,10 @@ class AppointmentsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+
+  private
+
+  def appointment_params
+    params.require(:appointment).permit(:status, :comment, :user_id, :treatment_id, :timeslot)
+  end
 end
