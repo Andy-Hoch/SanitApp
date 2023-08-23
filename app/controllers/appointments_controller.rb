@@ -24,12 +24,15 @@ class AppointmentsController < ApplicationController
 
   def new
     @appointment = Appointment.new
+    @treatment = Treatment.find(params[:treatment_id])
+
   end
 
   def create
     @appointment = Appointment.new(appointment_params)
     @treatment = Treatment.find(params[:treatment_id])
     @appointment.treatment = @treatment
+    @appointment.user_id = current_user.id
     @appointment.status = "Pending"
     if @appointment.save
       redirect_to appointment_path(@appointment)
