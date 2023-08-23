@@ -1,6 +1,7 @@
 <div class="container">
   <%= simple_form_for [@treatment, @appointment] do |f| %>
   <%= f.input :comment, label: "Tell us about your pains and we will come back to you!"%>
-  <%= f.submit %>
+  <%= f.submit class: "btn btn-primary" %>
 <% end %>
+<%= link_to("< back to Treatment", treatment_path(@treatment), class: "btn btn-outline-dark mt-3") %>
 </div>
