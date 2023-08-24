@@ -1,4 +1,5 @@
 class Treatment < ApplicationRecord
+  include PgSearch::Model
   belongs_to :user
   has_many :appointments, dependent: :destroy
   has_many :reviews, dependent: :destroy
@@ -13,6 +14,13 @@ class Treatment < ApplicationRecord
                 "Skin irritation",
                 "Restlessness"]
   validates :category, inclusion: { in: CATEGORIES }
-  include PgSearch::Model
-  multisearchable against: %i[name category description]
+
+  pg_search_scope :global_search,
+      against: [ :name, :category, :description, :address ],
+      associated_against: {
+        user: [ :first_name, :last_name ]
+      },
+      using: {
+        tsearch: { prefix: true }
+      }
 end

@@ -3,8 +3,11 @@ class TreatmentsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @treatments = Treatment.all
-    
+    if params[:query].present?
+      @treatments = Treatment.global_search(params[:query])
+    else
+      @treatments = Treatment.all
+    end
   end
 
   def new
