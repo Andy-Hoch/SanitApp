@@ -9,7 +9,9 @@
           <%= f.input :address, placeholder: 'Address for the treatment', label: 'Address for the treatment' %>
           <%= f.input :duration, placeholder: 'Duration in minutes' , label: 'Duration in minutes'%>
           <%= f.input :price, placeholder: 'Price in €' , label: 'Price in €'%>
-          <%= f.input :next_free_spot_timestamp, placeholder: 'Next available date' %>
+          <%= f.input :next_free_spot_timestamp,
+                      as: :string,
+                      input_html: { data: { controller: "datepicker" } } %>
           <%= f.input :photo, as: :file %>
           <%= f.submit class: 'btn btn-primary' %>
       <% end %>
