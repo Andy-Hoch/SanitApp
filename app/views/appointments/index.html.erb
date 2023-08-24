@@ -9,7 +9,7 @@
         <% if app.timeslot.nil? %>
           <p>Status: <%= app.status %></p>
         <% else %>
-          <p>Time: <%= app.timeslot %></p>
+          <p>Time: <%= app.timeslot.strftime("%a, %e.%m.%Y, %H:%M") %></p>
         <% end %>
         <p>Address: <%= app.treatment.address %></p>
         <p><i>Price: <%= app.treatment.price.to_i %>€ / <%= app.treatment.duration %>min</i></p>
