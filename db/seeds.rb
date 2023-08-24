@@ -129,7 +129,7 @@ file = URI.open("https://heilpraktikerin-claudiawinkler.de/wp-content/uploads/20
 relax.photo.attach(io: file, filename: "relax.png", content_type: "image/png")
 relax.save!
 
-Treatment.create(
+physio = Treatment.new(
   name: 'Physioenergetics Therapy',
   category: 'Aches & Pains',
   description: 'Physioenergetics therapy uses muscle-monitoring feedback to locate and identify the core stresses, issues and disharmony blocking the bodys natural healing processes.',
