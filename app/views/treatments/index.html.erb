@@ -7,16 +7,17 @@
 </div>
 
 <div class="container my-3">
-  <div class="row row-cols-1 row-cols-md-2 g-4">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
     <% @treatments.each do |treatment| %>
-      <%= link_to treatment_path(treatment) do %>
+      <%= link_to treatment_path(treatment), class: "card-link" do %>
         <div class="col">
           <div class="card">
-            <%= cl_image_tag treatment.user.photo.key, height: 200, width: 300, crop: :fit %>
+            <p class="card-text category"><%= treatment.category.upcase %></p>
+            <%= cl_image_tag treatment.user.photo.key, height: 250, crop: :fit , class: "card-image"%>
             <div class="card-body">
-              <h5 class="card-title"><%= treatment.name %></h5>
-              <p class="card-text"><%= treatment.description %></p>
-              <p class="card-text"><%= treatment.price %> €</p>
+              <h5 class="card-title one-line"><%= treatment.name %></h5>
+              <p class="card-text four-lines"><%= treatment.description %></p>
+              <p class="card-text"><%= treatment.price.to_i %>€ / <%= treatment.duration %>min</p>
             </div>
           </div>
         </div>

@@ -1,0 +1,39 @@
+.card-link {
+  text-decoration: none;
+}
+
+.card > .category {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background-color: rgb(70, 70, 70);
+  color: white;
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 2px;
+  width: auto;
+}
+
+.card-image {
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.card-body {
+  .card-title {
+    font-weight: bold;
+  }
+  .one-line {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .four-lines {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 4; /* number of lines to show */
+              line-clamp: 4;
+      -webkit-box-orient: vertical;
+  }
+}
