@@ -1,16 +1,53 @@
-<div class="container my-3">
+<div class="container">
+  <%= link_to("< Back to treatments", root_path, class: "btn btn-outline-dark btn-sm my-3") %>
+  <h1><%= @treatment.name %></h1>
+  <p><%= @treatment.address %></p>
+
+
   <div class="row">
-    <div class="col-6">
-      <h1><%= @treatment.name %></h1>
-      <%= cl_image_tag @treatment.user.photo.key, height: 400, width: 600, crop: :fill %>
-      <p>Category: <%= @treatment.category %></p>
-      <p>Description: <%= @treatment.description %></p>
-      <p>Location: <%= @treatment.address %></p>
-      <p>Price: <%= @treatment.price %> € for <%= @treatment.duration %> Minutes</p>
-      <p>Next free timeslot: <%= @treatment.next_free_spot_timestamp.strftime("%a, %e.%m.%Y, %H:%M") %></p>
-      <%= link_to("< Back to treatments", root_path, class: "btn btn-outline-dark") %>
-      <%= link_to("Ask for appointment", new_treatment_appointment_path(@treatment), class: "btn btn-primary") %>
+
+    <div class="col">
+      <%= cl_image_tag @treatment.photo.key, height: 400, width: 600, crop: :fill, class:"my-3" %>
+      <div class="row">
+        <div class="col-6 fw-bold"><p>Provider: </p></div>
+        <div class="col-6"><p><%= @treatment.user.first_name %> <%= @treatment.user.last_name %></p></div>
+      </div>
+      <div class="row">
+        <div class="col-6 fw-bold"><p>Category: </p></div>
+        <div class="col-6"><p><%= @treatment.category %></p></div>
+      </div>
+      <div class="row">
+        <div class="col-6 fw-bold"><p>Description: </p></div>
+        <div class="col-6"><p><%= @treatment.description %></p></div>
+      </div>
+      <div class="row">
+        <div class="col-6 fw-bold"><p>Location:</p></div>
+        <div class="col-6"><p><%= @treatment.address %></p></div>
+      </div>
+      <div class="row">
+        <div class="col-6 fw-bold"><p>Price:</p></div>
+        <div class="col-6"><p><%= @treatment.price.to_i %>€ / <%= @treatment.duration %> minutes</p></div>
+      </div>
+      <div class="row">
+        <div class="col-6 fw-bold"><p>Next free timeslot:</p></div>
+        <div class="col-6"><p><%= @treatment.next_free_spot_timestamp.strftime("%a, %e.%m.%Y, %H:%M") %></p></div>
+      </div>
     </div>
+
+    <div class="col">
+    <div class="border p-3 my-3 sticky-top">
+      <h2 class="my-3"> Ask for an appointment</h2>
+
+
+      <% if user_signed_in? %>
+        <%= simple_form_for [@treatment, @appointment] do |f| %>
+          <%= f.input :comment %>
+          <%= f.submit "Send request", class: "btn btn-primary" %>
+        <% end %>
+      <% end %>
+      </div>
+    </div>
+
   </div>
 
 </div>
