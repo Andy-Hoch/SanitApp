@@ -1,14 +1,18 @@
-<div class="container">
-  <h3>Add a treatment</h3>
-  <%= simple_form_for @treatment do |f| %>
-      <%= f.input :name, placeholder: 'Add a title' %>
-      <%= f.input :category, collection: Treatment::CATEGORIES, include_blank: false %>
-      <%= f.input :description, placeholder: 'Add a description' %>
-      <%= f.input :address, placeholder: 'Address for the treatment' %>
-      <%= f.input :duration, placeholder: 'Duration in minutes' %>
-      <%= f.input :price, placeholder: 'Price in €' , label: 'Price in €'%>
-      <%= f.input :next_free_spot_timestamp, placeholder: 'Next available date' %>
-      <%= f.input :photo, as: :file %>
-      <%= f.submit class: 'btn btn-primary' %>
-  <% end %>
+<div class="container my-4">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <h3>Add a treatment</h3>
+      <%= simple_form_for @treatment do |f| %>
+          <%= f.input :name, placeholder: 'Add a title' %>
+          <%= f.input :category, collection: Treatment::CATEGORIES, include_blank: false %>
+          <%= f.input :description, placeholder: 'Add a description', label: 'Add a description' %>
+          <%= f.input :address, placeholder: 'Address for the treatment', label: 'Address for the treatment' %>
+          <%= f.input :duration, placeholder: 'Duration in minutes' , label: 'Duration in minutes'%>
+          <%= f.input :price, placeholder: 'Price in €' , label: 'Price in €'%>
+          <%= f.input :next_free_spot_timestamp, placeholder: 'Next available date' %>
+          <%= f.input :photo, as: :file %>
+          <%= f.submit class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
 </div>
