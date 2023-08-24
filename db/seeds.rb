@@ -69,8 +69,8 @@ puts "Cleaning up treatments database..."
 Treatment.destroy_all
 puts "Treatments database cleaned"
 
-Treatment.create(
-  name: 'Traditional Chinese Accupuncture',
+acupuncture = Treatment.new(
+  name: 'Traditional Chinese Acupuncture',
   category: 'Restlessness',
   description: 'Acupuncture is part of the ancient practice of Traditional Chinese medicine. There are many conditions that may benefit from acupuncture, e.g. indigestions or emotional imbalance.',
   address: 'Hohenstaufenring 53, 50674 Köln',
@@ -80,7 +80,11 @@ Treatment.create(
   user_id: heiko.id
 )
 
-Treatment.create(
+file = URI.open("https://www.hopkinsmedicine.org/-/media/images/health/3_-wellness/integrative-medicine/acupuncture-teaser.jpg")
+acupuncture.photo.attach(io: file, filename: "acupunture.png", content_type: "image/png")
+acupuncture.save!
+
+herbal = Treatment.new(
   name: 'Chinese Herbal Treatment',
   category: 'Indigestions',
   description: 'Traditional Chinese Medicine makes use of herbs and herbal formulas to strengthen organ function and support good health.',
@@ -91,7 +95,11 @@ Treatment.create(
   user_id: heiko.id
 )
 
-Treatment.create(
+file = URI.open("https://media.istockphoto.com/id/1225721539/photo/the-doctor-of-traditional-chinese-medicine-pulse.jpg?s=612x612&w=0&k=20&c=kA6PIyKoGhPOGyrLeT22VDpzKiRuYpy1EJuoy6x_WHo=")
+herbal.photo.attach(io: file, filename: "herbal.png", content_type: "image/png")
+herbal.save!
+
+yoga = Treatment.new(
   name: 'Yoga Nidra',
   category: 'Sleeping Problems',
   description: 'The goal of yoga nidra is to promote a profound state of relaxation. Yoga Nidra combines guided mental imagery with a specific yoga posture called Shavasana (or “corpse pose”).',
@@ -102,7 +110,11 @@ Treatment.create(
   user_id: nicole.id
 )
 
-Treatment.create(
+file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6WuMWT82UApOdi1Q33QPlTLewhoTuC2g9AQ&usqp=CAU")
+yoga.photo.attach(io: file, filename: "yoga.png", content_type: "image/png")
+yoga.save!
+
+relax = Treatment.new(
   name: 'Relaxation Therapy',
   category: 'Indigestions',
   description: 'Relaxation Therapy is designed to reduce physical and mental tension. Techniques can include special breathing practices and progressive muscle relaxation exercises.',
@@ -113,7 +125,11 @@ Treatment.create(
   user_id: isabel.id
 )
 
-Treatment.create(
+file = URI.open("https://heilpraktikerin-claudiawinkler.de/wp-content/uploads/2019/05/claudia_winkler_praxis_02b.jpg")
+relax.photo.attach(io: file, filename: "relax.png", content_type: "image/png")
+relax.save!
+
+physio = Treatment.new(
   name: 'Physioenergetics Therapy',
   category: 'Aches & Pains',
   description: 'Physioenergetics therapy uses muscle-monitoring feedback to locate and identify the core stresses, issues and disharmony blocking the bodys natural healing processes.',
@@ -123,5 +139,9 @@ Treatment.create(
   next_free_spot_timestamp: Date.parse('2023-09-05'),
   user_id: isabel.id
 )
+
+file = URI.open("https://www.energetische-praxis.com/wp-content/uploads/2022/08/energetische-praxis-katrin-lukas-kosovrasti-physioenergetik.jpg")
+physio.photo.attach(io: file, filename: "physio.png", content_type: "image/png")
+physio.save!
 
 puts "Treatments created"

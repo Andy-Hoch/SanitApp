@@ -1,19 +1,21 @@
-<div class="container">
-  <h1>Your Appointments</h1>
+<div class="container my-3">
+  <h1 class="header-bold">My Appointments</h1>
     <% @appointments.each do |app| %>
-      <div class="container">
-        <ul>
-          <li>
-            Time: <%= app.timeslot %>
-          </li>
-          <li>
-            User: <%= app.user.first_name %> <%= app.user.last_name %> - <%= app.comment %> - <%= app.status %>
-          </li>
-          <li>
-            Provider: <%= app.treatment.user.first_name %> <%= app.treatment.user.last_name %> - <%= app.treatment.name %> - <%= app.status %>
-          </li>
-        </ul>
+    <div class="card-product">
+      <%= cl_image_tag app.treatment.photo.key %>
+      <div class="card-product-infos">
+        <h2><%= app.treatment.name %></h2>
+        <p>with: <%= app.treatment.user.first_name %> <%= app.treatment.user.last_name %></p>
+        <% if app.timeslot.nil? %>
+          <p>Status: <%= app.status %></p>
+        <% else %>
+          <p>Time: <%= app.timeslot.strftime("%a, %e.%m.%Y, %H:%M") %></p>
+        <% end %>
+        <p>Address: <%= app.treatment.address %></p>
+        <p><i>Price: <%= app.treatment.price.to_i %>€ / <%= app.treatment.duration %>min</i></p>
       </div>
+    </div>
     <% end %>
-  <%= link_to("< back to home", root_path) %>
+
+  <%= link_to("< back to home", root_path, class: "btn btn-outline-dark mt-3") %>
 </div>
