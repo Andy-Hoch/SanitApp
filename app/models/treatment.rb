@@ -13,4 +13,6 @@ class Treatment < ApplicationRecord
                 "Skin irritation",
                 "Restlessness"]
   validates :category, inclusion: { in: CATEGORIES }
+  include PgSearch::Model
+  multisearchable against: %i[name category description]
 end

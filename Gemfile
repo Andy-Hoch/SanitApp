@@ -30,6 +30,9 @@ gem "jbuilder"
 # Enable user authentication
 gem 'devise'
 
+# Search bar
+gem "pg_search"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
