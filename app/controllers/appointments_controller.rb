@@ -34,7 +34,7 @@ class AppointmentsController < ApplicationController
     @appointment.treatment = @treatment
     @appointment.user_id = current_user.id
     @appointment.status = "Pending"
-    if @appointment.save
+    if @appointment.save!
       redirect_to appointment_path(@appointment)
     else
       @appointment = Appointment.new

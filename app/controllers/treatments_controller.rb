@@ -11,6 +11,7 @@ class TreatmentsController < ApplicationController
   end
 
   def show
+    @appointment = Appointment.new
   end
 
   def create
