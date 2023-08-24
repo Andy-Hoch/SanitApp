@@ -1,7 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
-  
+
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -10,4 +10,11 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.dropdown-colors {
+  background-color: white;
+  :hover {
+    background-color: #e9e9e9;
+  }
 }
