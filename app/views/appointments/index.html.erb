@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container my-3">
   <h1 class="header-bold">My Appointments</h1>
     <% @appointments.each do |app| %>
     <div class="card-product">
@@ -12,10 +12,10 @@
           <p>Time: <%= app.timeslot %></p>
         <% end %>
         <p>Address: <%= app.treatment.address %></p>
-        <p><i>Price: <%= app.treatment.price.to_i %>€/ <%= app.treatment.duration %>min</i></p>
+        <p><i>Price: <%= app.treatment.price.to_i %>€ / <%= app.treatment.duration %>min</i></p>
       </div>
     </div>
     <% end %>
 
-  <%= link_to("< back to home", root_path) %>
+  <%= link_to("< back to home", root_path, class: "btn btn-outline-dark mt-3") %>
 </div>
