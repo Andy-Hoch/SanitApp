@@ -13,7 +13,7 @@
         <div class="col">
           <div class="card">
             <p class="card-text category"><%= treatment.category.upcase %></p>
-            <%= cl_image_tag treatment.user.photo.key, height: 250, crop: :fit , class: "card-image"%>
+            <%= cl_image_tag treatment.photo.key, height: 250, crop: :fit , class: "card-image"%>
             <div class="card-body">
               <h5 class="card-title one-line"><%= treatment.name %></h5>
               <p class="card-text four-lines"><%= treatment.description %></p>

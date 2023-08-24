@@ -2,16 +2,22 @@
   text-decoration: none;
 }
 
-.card > .category {
-  position: absolute;
-  top: 6px;
-  right: 6px;
-  background-color: rgb(70, 70, 70);
-  color: white;
-  font-size: 0.75rem;
-  padding: 4px 8px;
-  border-radius: 2px;
-  width: auto;
+.card {
+  transition: box-shadow .2s ease-in-out;
+  &:hover {
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  }
+  .category {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    background-color: rgb(70, 70, 70);
+    color: white;
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    border-radius: 2px;
+    width: auto;
+  }
 }
 
 .card-image {
