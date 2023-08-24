@@ -7,7 +7,7 @@
   <div class="row">
 
     <div class="col">
-      <%= cl_image_tag @treatment.user.photo.key, height: 400, width: 600, crop: :fill, class:"my-3" %>
+      <%= cl_image_tag @treatment.photo.key, height: 400, width: 600, crop: :fill, class:"my-3" %>
       <div class="row">
         <div class="col-6 fw-bold"><p>Provider: </p></div>
         <div class="col-6"><p><%= @treatment.user.first_name %> <%= @treatment.user.last_name %></p></div>
