@@ -5,9 +5,12 @@
 
 
   <div class="row mb-4">
-
-    <div class="col-6">
-      <%= cl_image_tag @treatment.photo.key, height: 400, width: 600, crop: :fill, class:"my-3 rounded" %>
+    <div class="col">
+      <% if @treatment.photo.attached? %>
+        <%= cl_image_tag @treatment.photo.key, height: 400, width: 600, crop: :fill, class:"my-3 w-100 rounded" %>
+      <% else %>
+        <%= image_tag('default_session.jpg', class: "my-3 w-100 rounded") %>
+      <% end %>
       <div class="row">
         <div class="col-4 fw-bold"><p>Provider: </p></div>
         <div class="col-8"><p><%= @treatment.user.first_name %> <%= @treatment.user.last_name %></p></div>
