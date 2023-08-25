@@ -2,7 +2,11 @@
   <h1 class="header-bold">My Appointments</h1>
     <% @appointments.each do |app| %>
     <div class="card-product">
-      <%= cl_image_tag app.treatment.photo.key %>
+      <% if app.treatment.photo.attached? %>
+        <%= cl_image_tag app.treatment.photo.key %>
+      <% else %>
+        <%= image_tag('default_session.jpg') %>
+      <% end %>
       <div class="card-product-infos">
         <h2><%= app.treatment.name %></h2>
         <p>with: <%= app.treatment.user.first_name %> <%= app.treatment.user.last_name %></p>

@@ -26,7 +26,11 @@
         <div class="col">
           <div class="card">
             <p class="card-text category"><%= treatment.category.upcase %></p>
-            <%= cl_image_tag treatment.photo.key, height: 250, crop: :fit , class: "card-image"%>
+            <% if treatment.photo.attached? %>
+              <%= cl_image_tag treatment.photo.key, height: 250, crop: :fit , class: "card-image"%>
+            <% else %>
+              <%= image_tag('default_session.jpg', class: "card-image") %>
+            <% end %>
             <div class="card-body">
               <h5 class="card-title one-line"><%= treatment.name %></h5>
               <p class="card-text four-lines"><%= treatment.description %></p>
