@@ -7,9 +7,9 @@
   <div class="row mb-4">
     <div class="col">
       <% if @treatment.photo.attached? %>
-        <%= cl_image_tag @treatment.photo.key, height: 400, width: 600, crop: :fill, class:"my-3 w-100" %>
+        <%= cl_image_tag @treatment.photo.key, height: 400, width: 600, crop: :fill, class:"my-3 w-100 rounded" %>
       <% else %>
-        <%= image_tag('default_session.jpg', class: "my-3 w-100") %>
+        <%= image_tag('default_session.jpg', class: "my-3 w-100 rounded") %>
       <% end %>
       <div class="row">
         <div class="col-4 fw-bold"><p>Provider: </p></div>
@@ -38,7 +38,7 @@
     </div>
 
     <div class="col-6">
-      <div class="border p-3 my-3 sticky-top" style="top:72px">
+      <div class="border p-3 my-3 sticky-top rounded" style="top:72px">
         <h2 class="my-3"> Ask for an appointment</h2>
 
         <% if user_signed_in? %>
