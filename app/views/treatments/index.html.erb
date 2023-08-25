@@ -24,7 +24,7 @@
     <% @treatments.each do |treatment| %>
       <%= link_to treatment_path(treatment), class: "card-link" do %>
         <div class="col">
-          <div class="card">
+          <div class="card overflow-hidden">
             <p class="card-text category"><%= treatment.category.upcase %></p>
             <% if treatment.photo.attached? %>
               <%= cl_image_tag treatment.photo.key, height: 250, crop: :fit , class: "card-image"%>
