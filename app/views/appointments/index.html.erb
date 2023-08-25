@@ -1,7 +1,8 @@
-<div class="container my-3">
+<div class="container mb-3">
+<%= link_to("< Back to home", root_path, class: "btn btn-outline-dark btn-sm my-3") %>
   <h1 class="header-bold">My Appointments</h1>
     <% @appointments.each do |app| %>
-    <div class="card-product">
+    <div class="card-product rounded">
       <% if app.treatment.photo.attached? %>
         <%= cl_image_tag app.treatment.photo.key %>
       <% else %>
@@ -21,5 +22,5 @@
     </div>
     <% end %>
 
-  <%= link_to("< back to home", root_path, class: "btn btn-outline-dark mt-3") %>
+
 </div>

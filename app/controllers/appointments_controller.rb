@@ -35,7 +35,7 @@ class AppointmentsController < ApplicationController
     @appointment.user_id = current_user.id
     @appointment.status = "Pending"
     if @appointment.save!
-      redirect_to appointment_path(@appointment)
+      redirect_to appointments_path
     else
       @appointment = Appointment.new
       render :new, status: :unprocessable_entity
