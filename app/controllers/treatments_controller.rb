@@ -16,6 +16,7 @@ class TreatmentsController < ApplicationController
 
   def show
     @appointment = Appointment.new
+    @marker = { lat: @treatment.latitude, lng: @treatment.longitude }
   end
 
   def create

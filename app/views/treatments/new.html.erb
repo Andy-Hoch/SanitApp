@@ -5,9 +5,9 @@
       <div class="bg-white rounded p-4 shadow">
         <h3>Add a treatment</h3>
         <%= simple_form_for @treatment do |f| %>
-            <%= f.input :name, placeholder: 'Add a title' %>
+            <%= f.input :name, placeholder: 'Please add a title' %>
             <%= f.input :category, collection: Treatment::CATEGORIES, include_blank: false %>
-            <%= f.input :description, placeholder: 'Add a description', label: 'Add a description' %>
+            <%= f.input :description, placeholder: 'Please add a description', label: 'Add a description' %>
             <%= f.input :address, placeholder: 'Address for the treatment', label: 'Address for the treatment' %>
             <div class="row g-3">
               <div class="col-md-6"><%= f.input :price, input_html: { value: 50 }, label: 'Price in €'%></div>

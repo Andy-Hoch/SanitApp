@@ -33,6 +33,9 @@ gem 'devise'
 # Search bar
 gem "pg_search"
 
+#A map box
+gem "geocoder"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
