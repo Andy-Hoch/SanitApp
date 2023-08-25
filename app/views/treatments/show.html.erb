@@ -35,19 +35,17 @@
     </div>
 
     <div class="col">
-    <div class="border p-3 my-3 sticky-top">
-      <h2 class="my-3"> Ask for an appointment</h2>
+      <div class="border p-3 my-3 sticky-top">
+        <h2 class="my-3"> Ask for an appointment</h2>
 
-
-      <% if user_signed_in? %>
-        <%= simple_form_for [@treatment, @appointment] do |f| %>
-          <%= f.input :comment %>
-          <%= f.submit "Send request", class: "btn btn-primary" %>
+        <% if user_signed_in? %>
+          <%= simple_form_for [@treatment, @appointment] do |f| %>
+            <%= f.input :comment %>
+            <%= f.submit "Send request", class: "btn btn-primary" %>
+          <% end %>
         <% end %>
-      <% end %>
       </div>
     </div>
 
   </div>
-
 </div>
