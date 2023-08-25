@@ -76,7 +76,7 @@ acupuncture = Treatment.new(
   address: 'Hohenstaufenring 53, 50674 Köln',
   price: 50,
   duration: 30,
-  next_free_spot_timestamp: Date.parse('2023-08-30'),
+  next_free_spot_timestamp: DateTime.parse('2023-08-30, 10:30'),
   user_id: heiko.id
 )
 
@@ -91,7 +91,7 @@ herbal = Treatment.new(
   address: 'Hohenstaufenring 53, 50674 Köln',
   price: 80,
   duration: 50,
-  next_free_spot_timestamp: Date.parse('2023-08-28'),
+  next_free_spot_timestamp: DateTime.parse('2023-08-28, 11:30'),
   user_id: heiko.id
 )
 
@@ -106,7 +106,7 @@ yoga = Treatment.new(
   address: 'Maastrichter Str. 26, 50672 Köln',
   price: 40,
   duration: 60,
-  next_free_spot_timestamp: Date.parse('2023-09-01'),
+  next_free_spot_timestamp: DateTime.parse('2023-09-01, 7:30'),
   user_id: nicole.id
 )
 
@@ -121,7 +121,7 @@ relax = Treatment.new(
   address: 'Antwerpener Straße 35, 50672 Köln',
   price: 75,
   duration: 50,
-  next_free_spot_timestamp: Date.parse('2023-09-07'),
+  next_free_spot_timestamp: DateTime.parse('2023-09-07, 20:30'),
   user_id: isabel.id
 )
 
@@ -136,7 +136,7 @@ physio = Treatment.new(
   address: 'Antwerpener Straße 35, 50672 Köln',
   price: 75,
   duration: 50,
-  next_free_spot_timestamp: Date.parse('2023-09-05'),
+  next_free_spot_timestamp: DateTime.parse('2023-09-05, 12:15'),
   user_id: isabel.id
 )
 
