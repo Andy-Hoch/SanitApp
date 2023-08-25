@@ -72,7 +72,7 @@ puts "Treatments database cleaned"
 acupuncture = Treatment.new(
   name: 'Traditional Chinese Acupuncture',
   category: 'Restlessness',
-  description: 'Acupuncture is part of the ancient practice of Traditional Chinese medicine. There are many conditions that may benefit from acupuncture, e.g. indigestions or emotional imbalance.',
+  description: 'Acupuncture is part of the ancient practice of Traditional Chinese medicine. There are many conditions that may benefit from acupuncture, e.g. back pain, indigestions or emotional imbalance.',
   address: 'Hohenstaufenring 53, 50674 Köln',
   price: 50,
   duration: 30,
