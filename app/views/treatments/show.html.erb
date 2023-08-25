@@ -8,7 +8,7 @@
 
     <div class="col">
       <% if @treatment.photo.attached? %>
-        <%= cl_image_tag @treatment.photo.key, height: 400, width: 600, crop: :fill, class:"my-3" %>
+        <%= cl_image_tag @treatment.photo.key, height: 400, width: 600, crop: :fill, class:"my-3 w-100" %>
       <% else %>
         <%= image_tag('default_session.jpg', class: "my-3 w-100") %>
       <% end %>
