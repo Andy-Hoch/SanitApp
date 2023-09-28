@@ -1,1 +1,8 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+# Sanitapp
+
+...is a simple Online Booking App for private health services, build by our small team of 4 as a projekt to learn Ruby on Rails at a LeWagon Bootcamp.
+
+Shoutout to my Team:
+- Hywel
+- Nicole
+- Froi
